@@ -22,7 +22,7 @@
     - [Displaying only exceptions](#displaying-only-exceptions-1)
     - [Displaying minimum log level](#displaying-minimum-log-level-1)
     - [Streaming mode](#streaming-mode-1)
-  - [Displaying specific entry](#displaying-specific-entry)
+    - [Displaying specific entry](#displaying-specific-entry)
   - [Authors](#authors)
   - [License](#license)
   - [Contributions](#contributions)
@@ -169,7 +169,7 @@ Works in the same way as ``list`` command.
 
 In streaming mode all raw input data from the previous pipe will be streamed to the stdout
 
-## Displaying specific entry
+### Displaying specific entry
 
 ```bash
 >  log-viewer show -n 2 logs.txt
