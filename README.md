@@ -11,6 +11,7 @@
 
 - [Install](#install)
 - [Quick start](#quick-start)
+  - [Getting help](#getting-help)
   - [Listing log entries](#listing-log-entries)
     - [From a file](#from-a-file)
     - [From stdin](#from-stdin)
@@ -40,6 +41,21 @@ In a nutshell ``Powerful Pipes Log Viewer`` is a command line tools for watching
 ```
 
 # Quick start
+
+## Getting help
+
+```bash
+> log-viewer help 
+Usage: log-viewer [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  help  Displays help
+  list  List long entries (default)
+  show  Show log entry details
+```
 
 ## Listing log entries
 
