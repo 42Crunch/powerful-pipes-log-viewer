@@ -91,7 +91,7 @@ def action_show(config: RunningConfigShow):
             data.append(("Exception", report.exceptionName))
             data.append(("Exception Message", report.exceptionMessage))
             data.append(("Exception file", report.binary))
-            data.append(("Stack Trace", click.style(report.stackTrace, fg="red")))
+            data.append(("Stack Trace", wrap(click.style(report.stackTrace, fg="red"), second_column_width)))
             data.append((
                 wrap("Exception User Message", 15, center=True),
                 wrap(report.userException, second_column_width)

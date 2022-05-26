@@ -2,7 +2,7 @@ import sys
 
 import click
 
-from powerful_pipes_log_viewer.action_list import setup_action_list, action_list as default_command
+from powerful_pipes_log_viewer.action_list import setup_action_list
 from powerful_pipes_log_viewer.action_help import setup_action_help
 from powerful_pipes_log_viewer.action_show import setup_action_show
 
