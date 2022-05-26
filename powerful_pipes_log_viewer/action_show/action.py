@@ -13,6 +13,9 @@ from powerful_pipes_log_viewer import get_file_content_reports, LOG_LEVELS, LOG_
 from .models import RunningConfigShow
 
 def wrap(text: str, width: int, center: bool = False) -> str:
+    if not text:
+        return ""
+
     if center:
         return "\n".join([
           x.center(width)
