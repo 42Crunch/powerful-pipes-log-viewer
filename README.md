@@ -1,7 +1,7 @@
 # Powerful Pipes Log Viewer
 
 ![License](https://img.shields.io/badge/APACHE-2-SUCCESS)
-![Logo](https://raw.githubusercontent.com/42Crunch/powerful-pipes-log-viewer/main/docs/logo.png)
+![Logo](https://raw.githubusercontent.com/42Crunch/powerful-pipes-log-viewer/main/docs/logo-250x250.png)
 
 ## Index
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -196,13 +196,13 @@ Powerful Pipes was made by 42Crunch Research Team:
 
 ## License
 
-Powerful Pipes is Open Source and available under the [Apache 2](https://github.com/42crunch/powerful-pipes-log-viewer/blob/main/LICENSE>).
+Powerful Pipes is Open Source and available under the [Apache 2](https://github.com/42crunch/powerful-pipes-log-viewer/blob/main/LICENSE).
 
 ## Contributions
 
-Contributions are very welcome. See [CONTRIBUTING.md](https://github.com/42crunch/powerful-pipes-log-viewer/blob/main/CONTRIBUTING.md>) or skim existing tickets to see where you could help out.
+Contributions are very welcome. See [CONTRIBUTING.md](https://github.com/42crunch/powerful-pipes-log-viewer/blob/main/CONTRIBUTING.md) or skim existing tickets to see where you could help out.
 
 Acknowledgements
 ----------------
 
-Project logo thanks to [Visitor icons created by pongsakornRed - Flaticon](https://www.flaticon.com/free-icons/visitor>)
+Project logo thanks to [Visitor icons created by pongsakornRed - Flaticon](https://www.flaticon.com/free-icons/visitor)
