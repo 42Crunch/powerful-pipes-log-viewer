@@ -1,30 +1,70 @@
-import json
 import os
 import sys
+import json
 import textwrap
+
 from datetime import datetime
 
 import click
 import tabulate
-from powerful_pipes import read_json
 
-from powerful_pipes_log_viewer import get_file_content_reports, LOG_LEVELS, LOG_LEVELS_NAMES
+from powerful_pipes_log_viewer import get_file_content_reports, LOG_LEVELS, \
+    LOG_LEVELS_NAMES
 
 from .models import RunningConfigShow
 
-def wrap(text: str, width: int, center: bool = False) -> str:
+def wrap(
+        text: str, width: int, color: str = None, center: bool = False
+) -> str:
     if not text:
         return ""
 
     if center:
         return "\n".join([
-          x.center(width)
-          for x in
-          textwrap.wrap(text, width=width)
+            click.style(x.center(width), fg=color)
+            if color else x.center(width)
+
+            for x in
+            textwrap.wrap(text, width=width)
         ])
 
     else:
         return "\n".join(textwrap.wrap(text, width=width))
+
+def wrap_ln(
+        text: str, width: int, color: str = None, center: bool = False
+) -> str:
+    if not text:
+        return ""
+
+    total_lines = []
+
+    for ln in text.splitlines():
+        line = ln.strip()
+
+        if len(line) > width:
+
+            if center:
+                total_lines.extend(
+                    x.center(width)
+                    for x in
+                    textwrap.wrap(line, width=width)
+                )
+            else:
+                total_lines.extend(textwrap.wrap(line, width=width))
+
+        else:
+
+            if center:
+                total_lines.append(line.center(width))
+            else:
+                total_lines.append(line)
+
+    # Write lines
+    return "\n".join(
+        click.style(x, fg=color) if color else x
+        for x in total_lines
+    )
 
 def action_show(config: RunningConfigShow):
 
@@ -59,7 +99,11 @@ def action_show(config: RunningConfigShow):
 
         data = [
             ("Number", index),
-            ("Command Line", click.style(wrap(report.commandLine, width=second_column_width), fg="magenta")),
+            ("Command Line", wrap(
+                report.commandLine,
+                width=second_column_width,
+                color="magenta"
+            )),
             ("Date", datetime.fromtimestamp(report.epoch) ),
         ]
 
@@ -87,14 +131,23 @@ def action_show(config: RunningConfigShow):
                     report.data, indent=4, sort_keys=True
                 )
                 data.append(("Extra data", pretty_json))
+
             except:
-                data.append(("Extra data", wrap(str(report.data), second_column_width)))
+                data.append((
+                    "Extra data",
+                    wrap(str(report.data), second_column_width)
+                ))
 
         if report.is_exception:
             data.append(("Exception", report.exceptionName))
             data.append(("Exception Message", report.exceptionMessage))
             data.append(("Exception file", report.binary))
-            data.append(("Stack Trace", wrap(click.style(report.stackTrace, fg="red"), second_column_width)))
+            data.append((
+                "Stack Trace",
+                wrap_ln(report.stackTrace,
+                        width=second_column_width,
+                        color="red")
+            ))
             data.append((
                 wrap("Exception User Message", 15, center=True),
                 wrap(report.userException, second_column_width)

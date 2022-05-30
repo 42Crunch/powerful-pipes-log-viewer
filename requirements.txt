@@ -1,4 +1,4 @@
-orjson
 click
+orjson
 tabulate
 powerful-pipes
