@@ -1,6 +1,7 @@
 # Powerful Pipes Log Viewer
 
 ![License](https://img.shields.io/badge/APACHE-2-SUCCESS)
+![Pypi](https://img.shields.io/pypi/v/powerful-pipes-log-viewer)
 
 ![Logo](https://raw.githubusercontent.com/42Crunch/powerful-pipes-log-viewer/main/docs/logo-250x250.png)
 
